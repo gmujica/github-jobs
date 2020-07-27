@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import useFetchJobs from './useFetchJobs'
-import { Container } from 'react-bootstrap'
+import { Container, Spinner } from 'react-bootstrap'
 import Job from './Job'
 
 function App() {
@@ -10,8 +10,8 @@ function App() {
   const { jobs, loading, error } = useFetchJobs(params, page)
 
   return (
-    <Container>
-      {loading && <h1>Loading...</h1>}
+    <Container className="my-4">
+      {loading && <Spinner size="xl" animation="border" variant="secondary" />}
       {error && <h1>Error. Try Refreshing.</h1>}
       {jobs.map(job => {
         return <Job hey={job.id} job={job} />
