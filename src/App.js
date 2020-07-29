@@ -16,6 +16,7 @@ function App() {
       <JobsPagination 
         page={page} 
         setPage={setPage}
+        hasNextPage={true}
       />
 
       {loading && <Spinner size="xl" animation="border" variant="secondary" />}
@@ -27,6 +28,7 @@ function App() {
       <JobsPagination 
         page={page} 
         setPage={setPage}
+        hasNextPage={true}
       />
     </Container>
   );
