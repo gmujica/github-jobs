@@ -8,7 +8,7 @@ function App() {
   const [params, setParams] = useState({})
   const [page, setPage] = useState(1)
   // state
-  const { jobs, loading, error } = useFetchJobs(params, page)
+  const { jobs, loading, error, hasNextPage } = useFetchJobs(params, page)
 
   return (
     <Container className="my-4">
@@ -16,7 +16,7 @@ function App() {
       <JobsPagination 
         page={page} 
         setPage={setPage}
-        hasNextPage={true}
+        hasNextPage={hasNextPage}
       />
 
       {loading && <Spinner size="xl" animation="border" variant="secondary" />}
@@ -28,7 +28,7 @@ function App() {
       <JobsPagination 
         page={page} 
         setPage={setPage}
-        hasNextPage={true}
+        hasNextPage={hasNextPage}
       />
     </Container>
   );
